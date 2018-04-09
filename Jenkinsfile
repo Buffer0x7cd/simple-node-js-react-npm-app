@@ -11,13 +11,9 @@ pipeline{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Buffer0x7cd/simple-node-js-react-npm-app.git']]])
             }
         }
-        stage('Project Directory'){
-            steps{
-                sh 'cd simple-node-js-react-npm-app'
-            }
-        }
         stage('Build'){
             steps{
+                sh 'cd simple-node-js-react-npm-app'
                 sh 'npm install'
             }
         }
