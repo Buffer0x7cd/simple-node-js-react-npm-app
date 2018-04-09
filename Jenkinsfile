@@ -12,7 +12,9 @@ pipeline{
             }
         }
         stage('Project Directory'){
-            sh 'cd simple-node-js-react-npm-app'
+            steps{
+                sh 'cd simple-node-js-react-npm-app'
+            }
         }
         stage('Build'){
             steps{
